@@ -1,5 +1,6 @@
 package com.example.unluckyyyapps.pertemuan_3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -42,6 +43,9 @@ class ThirdActivity : AppCompatActivity() {
             Log.e("Klik btnSubmit", "Tombol ditekan. Isi inputNama = $no")
 
             Toast.makeText(this, "Anda Telah Menekan Tombol: $no", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ThirdResultActivity::class.java)
+            startActivity(intent)
         }
+
     }
 }
