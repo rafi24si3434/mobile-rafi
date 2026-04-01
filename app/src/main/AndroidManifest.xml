@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UnluckyyyApps">
         <activity
-            android:name=".pertemuan_2.SecondActivity"
-            android:exported="true" >
+            android:name=".pertemuan_3.ThirdActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,10 +21,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".pertemuan_2.SecondActivity"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
