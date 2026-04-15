@@ -17,7 +17,7 @@ class WebViewActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Web Sistem Informasi Politeknik Caltex"
+            title = "Web Sistem Informasi Politeknik CaltexX"
             setDisplayHomeAsUpEnabled(true)
         }
 
