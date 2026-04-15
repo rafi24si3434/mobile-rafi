@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#673AB7"
+            android:elevation="6dp"
+            app:titleTextColor="@android:color/white"
+            app:subtitleTextColor="#E0E0E0"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- SCROLL CONTENT -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saya merupakan mahasiswa Program Studi Sistem Informasi yang saat ini berada di semester 4. Selama masa perkuliahan, saya telah mempelajari berbagai konsep dasar hingga lanjutan dalam bidang teknologi informasi, khususnya yang berkaitan dengan pengembangan aplikasi dan pengelolaan data.
+
+Saya memiliki ketertarikan yang kuat dalam dunia pemrograman dan pengembangan sistem, yang mendorong saya untuk terus mengasah kemampuan melalui berbagai project yang telah saya kerjakan, baik secara individu maupun kelompok. Beberapa mata kuliah yang telah saya tempuh dan memberikan pengalaman praktis antara lain Dasar Pemrograman (DPP), pengembangan web menggunakan framework Laravel, CodeIgniter, serta pengelolaan database.
+
+Dalam project DPP, saya belajar membangun logika program yang terstruktur dan efisien. Pada pengembangan menggunakan Laravel dan CodeIgniter, saya telah membuat beberapa aplikasi berbasis web dengan konsep MVC (Model-View-Controller), termasuk fitur CRUD, autentikasi, dan integrasi database. Selain itu, saya juga memiliki pengalaman dalam merancang dan mengelola database menggunakan SQL, mulai dari perancangan tabel hingga optimasi query.
+
+Melalui berbagai project tersebut, saya tidak hanya meningkatkan kemampuan teknis, tetapi juga kemampuan problem solving, analisis sistem, serta kerja sama tim. Saya terus berkomitmen untuk mengembangkan skill di bidang teknologi, mengikuti perkembangan terbaru, dan siap menghadapi tantangan di dunia industri IT ke depannya."
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Program Studi Sistem Informasi memiliki banyak keuntungan karena menggabungkan dua bidang utama, yaitu teknologi dan bisnis. Mahasiswa tidak hanya belajar tentang pemrograman, tetapi juga memahami bagaimana teknologi digunakan untuk menyelesaikan masalah dalam organisasi dan dunia industri. Hal ini menjadikan lulusan Sistem Informasi memiliki kemampuan yang fleksibel dan dapat beradaptasi di berbagai bidang pekerjaan.
+
+Salah satu keuntungan utama dari jurusan Sistem Informasi adalah peluang kerja yang luas. Lulusan tidak hanya terbatas menjadi programmer, tetapi juga dapat berkarier sebagai system analyst, database administrator, web developer, IT consultant, business analyst, hingga project manager di bidang teknologi informasi. Dengan pemahaman antara sistem dan kebutuhan bisnis, lulusan SI memiliki nilai lebih dibandingkan bidang yang hanya fokus pada coding saja.
+
+Selain itu, perkembangan teknologi yang sangat pesat seperti digitalisasi, big data, dan transformasi digital membuat kebutuhan akan tenaga ahli di bidang Sistem Informasi terus meningkat. Hampir semua perusahaan, baik skala kecil maupun besar, membutuhkan sistem informasi untuk meningkatkan efisiensi dan produktivitas kerja. Hal ini membuat lulusan Sistem Informasi memiliki peluang kerja yang tinggi dan stabil di masa depan.
+
+Keuntungan lainnya adalah kemampuan untuk bekerja secara mandiri maupun sebagai freelancer. Dengan skill yang dimiliki seperti pengembangan web menggunakan framework Laravel dan CodeIgniter, serta pengelolaan database, lulusan SI dapat membangun aplikasi sendiri, membuka jasa pembuatan website, atau bahkan membangun startup berbasis teknologi.
+
+Dengan kombinasi antara kemampuan teknis dan pemahaman bisnis, lulusan Sistem Informasi memiliki prospek karier yang menjanjikan, fleksibel, dan terus berkembang mengikuti kebutuhan zaman."
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Program Studi Sistem Informasi memberikan keunggulan kompetitif karena memadukan kemampuan teknis dengan pemahaman proses bisnis. Mahasiswa tidak hanya diajarkan bagaimana membuat sistem, tetapi juga bagaimana menganalisis kebutuhan pengguna, merancang solusi yang efisien, serta mengimplementasikan teknologi secara tepat guna. Hal ini menjadikan lulusan Sistem Informasi memiliki sudut pandang yang lebih luas dibandingkan bidang yang hanya berfokus pada satu aspek saja.
+
+Di era transformasi digital saat ini, hampir seluruh sektor industri bergantung pada sistem informasi untuk menjalankan operasionalnya. Mulai dari perusahaan startup, perbankan, e-commerce, hingga instansi pemerintahan, semuanya membutuhkan tenaga profesional yang mampu mengelola dan mengembangkan sistem yang terintegrasi. Kondisi ini membuka peluang besar bagi lulusan Sistem Informasi untuk berkarier di berbagai sektor dengan peran yang strategis.
+
+Lulusan Sistem Informasi juga memiliki keunggulan dalam hal kemampuan analisis dan pengambilan keputusan berbasis data. Dengan pemahaman database dan pengolahan informasi, mereka mampu membantu organisasi dalam meningkatkan efisiensi, mengurangi kesalahan operasional, serta mendukung pengambilan keputusan yang lebih akurat. Kemampuan ini sangat dibutuhkan dalam dunia kerja modern yang berbasis data (data-driven).
+
+Selain bekerja di perusahaan, lulusan Sistem Informasi juga memiliki peluang besar untuk menjadi technopreneur. Dengan bekal kemampuan pengembangan aplikasi dan pemahaman kebutuhan pasar, mereka dapat menciptakan produk digital seperti aplikasi web, sistem manajemen, atau platform layanan berbasis teknologi. Hal ini membuka jalan untuk membangun bisnis sendiri dan menciptakan lapangan kerja baru.
+
+Secara keseluruhan, jurusan Sistem Informasi menawarkan kombinasi keahlian yang relevan dengan kebutuhan industri saat ini dan masa depan. Dengan peluang karier yang luas, fleksibilitas pekerjaan, serta potensi pengembangan diri yang tinggi, lulusan Sistem Informasi menjadi salah satu profesi yang memiliki prospek cerah dan berkelanjutan."
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sebagai mahasiswa Sistem Informasi, saya merasakan secara langsung bagaimana bidang ini memberikan banyak manfaat dan peluang yang luas di dunia kerja. Sistem Informasi bukan hanya tentang coding, tetapi juga tentang bagaimana teknologi dapat digunakan untuk mempermudah pekerjaan manusia, meningkatkan efisiensi, dan membantu pengambilan keputusan dalam suatu organisasi.
+
+Salah satu keuntungan utama dari jurusan Sistem Informasi adalah fleksibilitas karier yang dimiliki oleh lulusannya. Dengan bekal pengetahuan di bidang pemrograman, database, serta analisis sistem, lulusan dapat bekerja di berbagai posisi seperti web developer, system analyst, database administrator, hingga IT support. Bahkan, tidak sedikit lulusan Sistem Informasi yang bekerja di luar bidang IT murni, seperti di bidang bisnis dan manajemen, karena mereka memiliki kemampuan analisis yang kuat.
+
+Selain itu, perkembangan teknologi yang terus meningkat membuat lulusan Sistem Informasi selalu dibutuhkan. Hampir semua sektor industri saat ini telah beralih ke sistem digital, sehingga kebutuhan akan tenaga profesional di bidang ini semakin tinggi. Hal ini menjadi peluang besar bagi lulusan untuk mendapatkan pekerjaan dengan prospek yang baik serta jenjang karier yang jelas.
+
+Keuntungan lainnya adalah kemampuan untuk terus berkembang secara mandiri. Dunia teknologi sangat dinamis, sehingga mahasiswa dan lulusan Sistem Informasi dituntut untuk selalu belajar hal baru, baik itu bahasa pemrograman, framework, maupun teknologi terbaru. Proses ini secara tidak langsung membentuk pribadi yang adaptif, kreatif, dan siap menghadapi perubahan.
+
+Dengan semua keunggulan tersebut, jurusan Sistem Informasi menjadi pilihan yang tepat bagi siapa saja yang ingin memiliki karier yang menjanjikan, fleksibel, dan relevan dengan perkembangan zaman. Lulusan Sistem Informasi tidak hanya menjadi pengguna teknologi, tetapi juga menjadi pencipta solusi digital yang bermanfaat bagi banyak orang."
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- 🔥 FLOATING BUTTON (TIDAK IKUT SCROLL) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnWebView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_view"
+        android:contentDescription="Buka WebView"
+
+        app:backgroundTint="#673AB7"
+        android:layout_gravity="bottom|end"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

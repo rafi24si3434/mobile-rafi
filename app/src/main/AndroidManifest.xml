@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- ✅ FIX di sini -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,22 +15,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UnluckyyyApps">
 
-        <!-- MAIN (Launcher dipindah ke sini) -->
+        <!-- MAIN -->
         <activity
-            android:name=".MainActivity"
+            android:name=".pertemuan_5.FifthActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-        <!-- Fourth -->
+        <!-- Activity lain -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".pertemuan_4.FourthActivity"
             android:exported="false" />
 
-        <!-- Pertemuan 3 -->
         <activity
             android:name=".pertemuan_3.ThirdResultActivity"
             android:exported="false" />
@@ -36,9 +44,12 @@
             android:name=".pertemuan_3.ThirdActivity"
             android:exported="false" />
 
-        <!-- Pertemuan 2 -->
         <activity
             android:name=".pertemuan_2.SecondActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".pertemuan_5.WebViewActivity"
             android:exported="false" />
 
     </application>
