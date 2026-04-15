@@ -15,19 +15,17 @@ class WebViewActivity : AppCompatActivity() {
         binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // ✅ Toolbar setup
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Web Merdeka"
+            title = "Web Sistem Informasi Politeknik Caltex"
             setDisplayHomeAsUpEnabled(true)
         }
 
-        // ✅ WebView setup
+
         binding.webview.webViewClient = WebViewClient()
         binding.webview.settings.javaScriptEnabled = true
-        binding.webview.loadUrl("https://merdeka.com")
+        binding.webview.loadUrl("https://pcr.ac.id/program-studi/si")
 
-        // ✅ Scroll behavior (hide/show toolbar)
         binding.webview.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             if (scrollY > oldScrollY) {
                 binding.appbar.setExpanded(false, true) // hide
@@ -37,13 +35,11 @@ class WebViewActivity : AppCompatActivity() {
         }
     }
 
-    // ✅ Back button toolbar
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()
         return true
     }
 
-    // ✅ Back dalam WebView
     override fun onBackPressed() {
         if (binding.webview.canGoBack()) {
             binding.webview.goBack()
