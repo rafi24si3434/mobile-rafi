@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- ✅ FIX di sini -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UnluckyyyApps">
 
-        <!-- MAIN -->
+        <!-- ✅ LOGIN JADI HALAMAN AWAL -->
         <activity
-            android:name=".pertemuan_5.FifthActivity"
+            android:name=".AuthActivity"
             android:exported="true">
 
             <intent-filter>
@@ -27,9 +26,14 @@
 
         </activity>
 
-        <!-- Activity lain -->
+        <!-- MAIN SETELAH LOGIN -->
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- Activity lain tetap -->
+        <activity
+            android:name=".pertemuan_5.FifthActivity"
             android:exported="false" />
 
         <activity
