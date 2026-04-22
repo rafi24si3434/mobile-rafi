@@ -36,7 +36,7 @@ class AuthActivity : AppCompatActivity() {
             val password = binding.edtPassword.text.toString().trim()
 
             if (username.isEmpty()) {
-                binding.edtUsername.error = "Username wajib diisi"
+                binding.edtUsername.error = "Username wajib diisii"
                 return@setOnClickListener
             }
 
