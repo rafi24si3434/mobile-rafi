@@ -16,16 +16,20 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // SharedPreferences
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val sharedPref =
+            getSharedPreferences(
+                "user_pref",
+                MODE_PRIVATE
+            )
 
-        // Tombol Login
         binding.btnLogin.setOnClickListener {
 
-            val username = binding.edtUsername.text.toString().trim()
-            val password = binding.edtPassword.text.toString().trim()
+            val username =
+                binding.edtUsername.text.toString().trim()
 
-            // Validasi kosong
+            val password =
+                binding.edtPassword.text.toString().trim()
+
             if (username.isEmpty()) {
                 binding.edtUsername.error = "Username wajib diisi"
                 return@setOnClickListener
@@ -36,13 +40,21 @@ class AuthActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Login berhasil jika username = password
+            // Jika username = password login sukses
             if (username == password) {
 
-                // Simpan session login
                 val editor = sharedPref.edit()
-                editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
+
+                editor.putBoolean(
+                    "isLogin",
+                    true
+                )
+
+                editor.putString(
+                    "username",
+                    username
+                )
+
                 editor.apply()
 
                 Toast.makeText(
@@ -51,8 +63,12 @@ class AuthActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // Masuk ke MainActivity
-                val intent = Intent(this, MainActivity::class.java)
+                // LANGSUNG MASUK KE BINA DESA
+                val intent = Intent(
+                    this,
+                    BinaDesa::class.java
+                )
+
                 startActivity(intent)
                 finish()
 

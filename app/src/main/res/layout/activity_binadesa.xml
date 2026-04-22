@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF7F7"
+    android:padding="30dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/chatgpt_image_apr_22__2026__08_29_16_pm"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Judul -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bina Desa Pariwisata"
+        android:textColor="#B71C1C"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sistem Informasi Homestay"
+        android:textColor="#D32F2F"
+        android:textSize="18sp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="35dp"/>
+
+    <!-- Card Menu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu Utama"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1F2A44"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/btnWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="🌐 Akses Website Bina Desa"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:backgroundTint="#C62828"
+            android:layout_marginBottom="18dp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Logout Sistem"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:backgroundTint="#8B0000"/>
+
+    </LinearLayout>
+
+    <!-- Footer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pengelolaan Desa Wisata dan Homestay Digital"
+        android:textColor="#777777"
+        android:textSize="13sp"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>
