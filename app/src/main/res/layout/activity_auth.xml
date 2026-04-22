@@ -7,6 +7,12 @@
     android:gravity="center"
     android:padding="24dp">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="135dp"
+        android:layout_height="137dp"
+        app:srcCompat="@drawable/alter_ego_seeklogo" />
+
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -34,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"/>
+
 
 
 
