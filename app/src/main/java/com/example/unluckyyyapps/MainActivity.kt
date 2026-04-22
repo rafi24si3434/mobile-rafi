@@ -23,43 +23,63 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val systemBars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars()
+            )
+
             v.setPadding(
                 systemBars.left,
                 systemBars.top,
                 systemBars.right,
                 systemBars.bottom
             )
+
             insets
         }
 
         // SharedPreferences
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val sharedPref = getSharedPreferences(
+            "user_pref",
+            MODE_PRIVATE
+        )
 
+        // Tombol pindah ke FourthActivity
         binding.btnToFourth.setOnClickListener {
-            val intent = Intent(this, FourthActivity::class.java)
+
+            val intent = Intent(
+                this,
+                FourthActivity::class.java
+            )
+
             intent.putExtra("name", "Politeknik Caltex Riau")
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
+
             startActivity(intent)
         }
 
+        // Logout
         binding.btnLogout.setOnClickListener {
 
             AlertDialog.Builder(this)
                 .setTitle("Konfirmasi")
                 .setMessage("Yakin ingin logout?")
+
                 .setPositiveButton("Ya") { dialog, _ ->
 
-                    // Hapus data SharedPreferences
+                    // Hapus session login
                     val editor = sharedPref.edit()
                     editor.clear()
                     editor.apply()
 
                     dialog.dismiss()
 
-                    // Kembali ke AuthActivity
-                    val intent = Intent(this, AuthActivity::class.java)
+                    // Balik ke SplashScreen (sesuai alur baru)
+                    val intent = Intent(
+                        this,
+                        SplashScreenActivity::class.java
+                    )
+
                     intent.flags =
                         Intent.FLAG_ACTIVITY_NEW_TASK or
                                 Intent.FLAG_ACTIVITY_CLEAR_TASK

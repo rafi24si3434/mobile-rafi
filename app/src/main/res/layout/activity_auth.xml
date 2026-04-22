@@ -8,11 +8,10 @@
     android:padding="24dp">
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="135dp"
-        android:layout_height="137dp"
-        app:srcCompat="@drawable/alter_ego_seeklogo" />
-
+        android:id="@+id/imageView6"
+        android:layout_width="163dp"
+        android:layout_height="174dp"
+        app:srcCompat="@drawable/chatgpt_image_apr_22__2026__04_04_57_pm" />
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"

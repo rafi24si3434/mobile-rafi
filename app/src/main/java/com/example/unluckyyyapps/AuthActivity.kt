@@ -19,24 +19,15 @@ class AuthActivity : AppCompatActivity() {
         // SharedPreferences
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        // Cek apakah user sudah login
-        val isLogin = sharedPref.getBoolean("isLogin", false)
-
-        if (isLogin) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-            return
-        }
-
         // Tombol Login
         binding.btnLogin.setOnClickListener {
 
             val username = binding.edtUsername.text.toString().trim()
             val password = binding.edtPassword.text.toString().trim()
 
+            // Validasi kosong
             if (username.isEmpty()) {
-                binding.edtUsername.error = "Username wajib diisii"
+                binding.edtUsername.error = "Username wajib diisi"
                 return@setOnClickListener
             }
 
@@ -44,7 +35,11 @@ class AuthActivity : AppCompatActivity() {
                 binding.edtPassword.error = "Password wajib diisi"
                 return@setOnClickListener
             }
-            if (username == "admin" && password == "12345") {
+
+            // Login berhasil jika username = password
+            if (username == password) {
+
+                // Simpan session login
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
@@ -56,11 +51,13 @@ class AuthActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
+                // Masuk ke MainActivity
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
 
             } else {
+
                 Toast.makeText(
                     this,
                     "Username atau Password salah",

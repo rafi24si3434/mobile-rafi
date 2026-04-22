@@ -14,9 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UnluckyyyApps">
 
-        <!-- ✅ LOGIN JADI HALAMAN AWAL -->
         <activity
-            android:name=".AuthActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
 
             <intent-filter>
@@ -55,6 +54,10 @@
         <activity
             android:name=".pertemuan_5.WebViewActivity"
             android:exported="false" />
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false" />
+
 
     </application>
 
