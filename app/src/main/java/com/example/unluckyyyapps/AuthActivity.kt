@@ -2,7 +2,7 @@ package com.example.unluckyyyapps
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.unluckyyyapps.databinding.ActivityAuthBinding
 
@@ -16,18 +16,56 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnLogin.setOnClickListener {
-            val username = binding.edtUsername.text.toString()
-            val password = binding.edtPassword.text.toString()
+        // SharedPreferences
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-            if (username == password) {
-                startActivity(Intent(this, MainActivity::class.java))
+        // Cek apakah user sudah login
+        val isLogin = sharedPref.getBoolean("isLogin", false)
+
+        if (isLogin) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
+
+        // Tombol Login
+        binding.btnLogin.setOnClickListener {
+
+            val username = binding.edtUsername.text.toString().trim()
+            val password = binding.edtPassword.text.toString().trim()
+
+            if (username.isEmpty()) {
+                binding.edtUsername.error = "Username wajib diisi"
+                return@setOnClickListener
+            }
+
+            if (password.isEmpty()) {
+                binding.edtPassword.error = "Password wajib diisi"
+                return@setOnClickListener
+            }
+            if (username == "admin" && password == "12345") {
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLogin", true)
+                editor.putString("username", username)
+                editor.apply()
+
+                Toast.makeText(
+                    this,
+                    "Login Berhasil",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+
             } else {
-                AlertDialog.Builder(this)
-                    .setTitle("Error")
-                    .setMessage("Silahkan coba lagi")
-                    .setPositiveButton("OK", null)
-                    .show()
+                Toast.makeText(
+                    this,
+                    "Username atau Password salah",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }

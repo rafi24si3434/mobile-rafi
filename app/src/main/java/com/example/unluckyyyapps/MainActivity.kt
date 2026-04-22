@@ -17,19 +17,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Edge to edge
         enableEdgeToEdge()
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
             insets
         }
 
-        // 🔵 Ke FourthActivity
+        // SharedPreferences
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             intent.putExtra("name", "Politeknik Caltex Riau")
@@ -38,17 +44,34 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // 🔴 LOGOUT
         binding.btnLogout.setOnClickListener {
+
             AlertDialog.Builder(this)
                 .setTitle("Konfirmasi")
                 .setMessage("Yakin ingin logout?")
-                .setPositiveButton("Ya") { _, _ ->
+                .setPositiveButton("Ya") { dialog, _ ->
+
+                    // Hapus data SharedPreferences
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+
+                    // Kembali ke AuthActivity
                     val intent = Intent(this, AuthActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    intent.flags =
+                        Intent.FLAG_ACTIVITY_NEW_TASK or
+                                Intent.FLAG_ACTIVITY_CLEAR_TASK
+
                     startActivity(intent)
+                    finish()
                 }
-                .setNegativeButton("Tidak", null)
+
+                .setNegativeButton("Tidak") { dialog, _ ->
+                    dialog.dismiss()
+                }
+
                 .show()
         }
     }
