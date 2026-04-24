@@ -176,7 +176,7 @@
         android:src="@android:drawable/ic_menu_view"
         android:contentDescription="Buka WebView"
         app:tint="@android:color/white"
-        app:backgroundTint="#FF4081" app:elevation="6dp"
+        app:backgroundTint="#000000" app:elevation="6dp"
         app:pressedTranslationZ="12dp"
         android:layout_gravity="bottom|end"/>
 

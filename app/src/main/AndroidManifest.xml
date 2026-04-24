@@ -17,7 +17,7 @@
 
         <!-- Tetap launcher utama -->
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".pertemuan_5.FifthActivity"
             android:exported="true">
 
             <intent-filter>
@@ -48,7 +48,7 @@
             android:exported="false"/>
 
         <activity
-            android:name=".pertemuan_5.FifthActivity"
+            android:name=".SplashScreenActivity"
             android:exported="false"/>
 
         <activity
