@@ -1,87 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="#FFF7F7"
-    android:padding="30dp">
+    android:background="#F5F7FB">
+
+    <!-- Header -->
+    <View
+        android:id="@+id/headerBg"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:background="#8B0000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Logo -->
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:id="@+id/logo"
+        android:layout_width="167dp"
+        android:layout_height="169dp"
+        android:layout_marginTop="38dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/chatgpt_image_apr_22__2026__08_29_16_pm"
-        android:layout_marginBottom="20dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Judul -->
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Main Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mainCard"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Bina Desa Pariwisata"
-        android:textColor="#B71C1C"
-        android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="26dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/headerBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sistem Informasi Homestay"
-        android:textColor="#D32F2F"
-        android:textSize="18sp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="35dp"/>
-
-    <!-- Card Menu -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:elevation="8dp"
-        android:orientation="vertical"
-        android:padding="25dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Menu Utama"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#1F2A44"
-            android:layout_gravity="center"
-            android:layout_marginBottom="30dp"/>
+            android:orientation="vertical"
+            android:padding="28dp">
 
-        <Button
-            android:id="@+id/btnWebsite"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="🌐 Akses Website Bina Desa"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:backgroundTint="#C62828"
-            android:layout_marginBottom="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bina Desa Pariwisata"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:textColor="#111111"/>
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="Logout Sistem"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:backgroundTint="#8B0000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sistem Informasi Homestay"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="28dp"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Utama"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="#1F2A44"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Tombol Website -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="Akses Website Bina Desa"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#C62828"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Tombol Logout -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="Logout Sistem"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#8B0000"
+                app:cornerRadius="16dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Footer -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pengelolaan Desa Wisata dan Homestay Digital"
-        android:textColor="#777777"
-        android:textSize="13sp"
-        android:layout_marginTop="30dp"/>
+        android:textColor="#888888"
+        android:textSize="12sp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
