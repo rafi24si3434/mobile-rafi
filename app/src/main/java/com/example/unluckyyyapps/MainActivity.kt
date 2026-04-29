@@ -9,11 +9,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.unluckyyyapps.databinding.ActivityMainBinding
 
-import com.example.unluckyyyapps.pertemuan_2.SecondActivity
-import com.example.unluckyyyapps.pertemuan_3.ThirdActivity
-import com.example.unluckyyyapps.pertemuan_4.FourthActivity
-import com.example.unluckyyyapps.pertemuan_5.FifthActivity
-import com.example.unluckyyyapps.pertemuan_7.SeventhActivity
+import com.example.unluckyyyapps.Home.pertemuan_2.SecondActivity
+import com.example.unluckyyyapps.Home.pertemuan_3.ThirdActivity
+import com.example.unluckyyyapps.Home.pertemuan_4.FourthActivity
+import com.example.unluckyyyapps.Home.pertemuan_5.FifthActivity
+import com.example.unluckyyyapps.Home.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
 
