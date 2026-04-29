@@ -8,7 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.unluckyyyapps.databinding.ActivityMainBinding
+
+import com.example.unluckyyyapps.pertemuan_2.SecondActivity
+import com.example.unluckyyyapps.pertemuan_3.ThirdActivity
 import com.example.unluckyyyapps.pertemuan_4.FourthActivity
+import com.example.unluckyyyapps.pertemuan_5.FifthActivity
+import com.example.unluckyyyapps.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,14 +42,39 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // SharedPreferences
         val sharedPref = getSharedPreferences(
             "user_pref",
             MODE_PRIVATE
         )
 
-        // Tombol pindah ke FourthActivity
-        binding.btnToFourth.setOnClickListener {
+        // =========================
+        // PERPINDAHAN TIAP PERTEMUAN
+        // =========================
+
+        // Pertemuan 2
+        binding.btnPertemuan2.setOnClickListener {
+
+            val intent = Intent(
+                this,
+                SecondActivity::class.java
+            )
+
+            startActivity(intent)
+        }
+
+        // Pertemuan 3
+        binding.btnPertemuan3.setOnClickListener {
+
+            val intent = Intent(
+                this,
+                ThirdActivity::class.java
+            )
+
+            startActivity(intent)
+        }
+
+        // Pertemuan 4
+        binding.btnPertemuan4.setOnClickListener {
 
             val intent = Intent(
                 this,
@@ -58,7 +88,31 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Logout
+        // Pertemuan 5
+        binding.btnPertemuan5.setOnClickListener {
+
+            val intent = Intent(
+                this,
+                FifthActivity::class.java
+            )
+
+            startActivity(intent)
+        }
+
+        // Pertemuan 7
+        binding.btnPertemuan7.setOnClickListener {
+
+            val intent = Intent(
+                this,
+                SeventhActivity::class.java
+            )
+
+            startActivity(intent)
+        }
+
+        // =========
+        // LOGOUT
+        // =========
         binding.btnLogout.setOnClickListener {
 
             AlertDialog.Builder(this)
@@ -67,14 +121,12 @@ class MainActivity : AppCompatActivity() {
 
                 .setPositiveButton("Ya") { dialog, _ ->
 
-                    // Hapus session login
                     val editor = sharedPref.edit()
                     editor.clear()
                     editor.apply()
 
                     dialog.dismiss()
 
-                    // Balik ke SplashScreen (sesuai alur baru)
                     val intent = Intent(
                         this,
                         SplashScreenActivity::class.java
