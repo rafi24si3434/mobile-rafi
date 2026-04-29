@@ -1,17 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BF5E18"
-    tools:context=".Message.MessageFragment">
+    android:background="@drawable/ic_home"> <com.google.android.material.card.MaterialCardView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="24dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="12dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="30sp"
+        android:layout_height="wrap_content"
+        android:padding="32dp">
+
+        <View
+            android:id="@+id/icon_background"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_home"
+            android:alpha="0.15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        <ImageView
+            android:id="@+id/iv_message_icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="Message Icon"
+            android:src="@drawable/ceklis"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_background"
+            app:layout_constraintEnd_toEndOf="@+id/icon_background"
+            app:layout_constraintStart_toStartOf="@+id/icon_background"
+            app:layout_constraintTop_toTopOf="@+id/icon_background"
+            app:tint="#10B981" /> <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_message_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textAlignment="center"
+        android:textColor="#0F172A"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        android:text="Fragment Message" />
-</FrameLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon_background"
+        tools:text="Pesan Berhasil Terkirim!" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_message_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="4dp"
+            android:textAlignment="center"
+            android:textColor="#64748B"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_message_title"
+            tools:text="Terima kasih, data Anda telah kami terima dan akan segera diproses oleh tim kami." />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_action"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:elevation="4dp"
+            android:text="MENGERTI"
+            android:background="@color/material_dynamic_secondary0"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_message_body" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

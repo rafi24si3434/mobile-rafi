@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.unluckyyyapps.Home.HomeFragment
 import com.example.unluckyyyapps.Message.MessageFragment
 import com.example.unluckyyyapps.More.MoreFragment
 import com.example.unluckyyyapps.databinding.ActivityBaseBinding
+import com.example.unluckyyyapps.home.HomeFragment
 
 class BaseActivity : AppCompatActivity() {
 
