@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#08B34C"
-    tools:context=".Home.pertemuan_7.TigaFragment">
+    tools:context=".pertemuan_7.TigaFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

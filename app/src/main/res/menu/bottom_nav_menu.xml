@@ -8,11 +8,11 @@
     <item
         android:id="@+id/message"
         android:icon="@drawable/ic_message"
-        android:title="Message" />
+        android:title="About" />
 
     <item
         android:id="@+id/more"
         android:icon="@drawable/ic_more"
-        android:title="More" />
+        android:title="Profile" />
 
 </menu>

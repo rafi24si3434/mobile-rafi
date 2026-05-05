@@ -16,19 +16,12 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sharedPref =
-            getSharedPreferences(
-                "user_pref",
-                MODE_PRIVATE
-            )
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         binding.btnLogin.setOnClickListener {
 
-            val username =
-                binding.edtUsername.text.toString().trim()
-
-            val password =
-                binding.edtPassword.text.toString().trim()
+            val username = binding.edtUsername.text.toString().trim()
+            val password = binding.edtPassword.text.toString().trim()
 
             if (username.isEmpty()) {
                 binding.edtUsername.error = "Username wajib diisi"
@@ -40,45 +33,21 @@ class AuthActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Jika username = password login sukses
+            // LOGIN SEDERHANA
             if (username == password) {
 
                 val editor = sharedPref.edit()
-
-                editor.putBoolean(
-                    "isLogin",
-                    true
-                )
-
-                editor.putString(
-                    "username",
-                    username
-                )
-
+                editor.putBoolean("isLogin", true)
+                editor.putString("username", username)
                 editor.apply()
 
-                Toast.makeText(
-                    this,
-                    "Login Berhasil",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
 
-                // LANGSUNG MASUK KE BINA DESA
-                val intent = Intent(
-                    this,
-                    BinaDesa::class.java
-                )
-
-                startActivity(intent)
+                startActivity(Intent(this, BaseActivity::class.java))
                 finish()
 
             } else {
-
-                Toast.makeText(
-                    this,
-                    "Username atau Password salah",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show()
             }
         }
     }

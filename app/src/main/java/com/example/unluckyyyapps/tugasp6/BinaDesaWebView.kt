@@ -22,7 +22,7 @@ class BinaDesaWebView : AppCompatActivity() {
         binding = BinadesaWebviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sharedPref = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE)
 
         // Ambil URL tersimpan, kalau kosong pakai default
         val savedUrl = sharedPref.getString(
@@ -52,7 +52,7 @@ class BinaDesaWebView : AppCompatActivity() {
 
         val editor = getSharedPreferences(
             PREF_NAME,
-            Context.MODE_PRIVATE
+            MODE_PRIVATE
         ).edit()
 
         editor.putString(

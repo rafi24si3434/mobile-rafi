@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- Permission Internet -->
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,52 +13,71 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UnluckyyyApps">
+
+        <!-- MAIN ACTIVITY -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <!-- MAIN LAUNCHER -->
+
+        <!-- SPLASH (LAUNCHER) -->
         <activity
-            android:name=".BaseActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Splash (bukan launcher lagi) -->
+        </activity>
+
+        <!-- BASE ACTIVITY -->
         <activity
-            android:name=".SplashScreenActivity"
-            android:exported="false" /> <!-- Login -->
+            android:name=".BaseActivity"
+            android:exported="false" />
+
+        <!-- AUTH -->
         <activity
-            android:name=".Home.pertemuan_5.FifthActivity"
-            android:exported="false" /> <!-- Bina Desa -->
+            android:name=".AuthActivity"
+            android:exported="false" />
+
+        <!-- PERTEMUAN 2 -->
+        <activity
+            android:name=".pertemuan_2.SecondActivity"
+            android:exported="false" />
+
+        <!-- PERTEMUAN 3 -->
+        <activity
+            android:name=".pertemuan_3.ThirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_3.ThirdResultActivity"
+            android:exported="false" />
+
+        <!-- PERTEMUAN 4 -->
+        <activity
+            android:name=".pertemuan_4.FourthActivity"
+            android:exported="false" />
+
+        <!-- PERTEMUAN 5 -->
+        <activity
+            android:name=".pertemuan_5.FifthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_5.WebViewActivity"
+            android:exported="false" />
+
+        <!-- PERTEMUAN 7 -->
+        <activity
+            android:name=".pertemuan_7.SeventhActivity"
+            android:exported="false" />
+
+        <!-- TUGAS P6 - BINA DESA (ada di Home/tugasp6) -->
         <activity
             android:name=".BinaDesa"
             android:exported="false" />
         <activity
             android:name=".BinaDesaWebView"
-            android:exported="false" /> <!-- Auth -->
-        <activity
-            android:name=".AuthActivity"
-            android:exported="false" /> <!-- Pertemuan 2 -->
-        <activity
-            android:name=".Home.pertemuan_2.SecondActivity"
-            android:exported="false" /> <!-- Pertemuan 3 -->
-        <activity
-            android:name=".Home.pertemuan_3.ThirdActivity"
             android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_3.ThirdResultActivity"
-            android:exported="false" /> <!-- Pertemuan 4 -->
-        <activity
-            android:name=".Home.pertemuan_4.FourthActivity"
-            android:exported="false" /> <!-- Pertemuan 5 WebView -->
-        <activity
-            android:name=".Home.pertemuan_5.WebViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_7.SeventhActivity"
-            android:exported="false" />
+
     </application>
 
 </manifest>
