@@ -13,71 +13,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UnluckyyyApps">
-
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
         <!-- MAIN ACTIVITY -->
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-
-        <!-- SPLASH (LAUNCHER) -->
+            android:exported="false" /> <!-- SPLASH (LAUNCHER) -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- BASE ACTIVITY -->
+        </activity> <!-- BASE ACTIVITY -->
         <activity
             android:name=".BaseActivity"
-            android:exported="false" />
-
-        <!-- AUTH -->
+            android:exported="false" /> <!-- AUTH -->
         <activity
             android:name=".AuthActivity"
-            android:exported="false" />
-
-        <!-- PERTEMUAN 2 -->
+            android:exported="false" /> <!-- PERTEMUAN 2 -->
         <activity
             android:name=".pertemuan_2.SecondActivity"
-            android:exported="false" />
-
-        <!-- PERTEMUAN 3 -->
+            android:exported="false" /> <!-- PERTEMUAN 3 -->
         <activity
             android:name=".pertemuan_3.ThirdActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan_3.ThirdResultActivity"
-            android:exported="false" />
-
-        <!-- PERTEMUAN 4 -->
+            android:exported="false" /> <!-- PERTEMUAN 4 -->
         <activity
             android:name=".pertemuan_4.FourthActivity"
-            android:exported="false" />
-
-        <!-- PERTEMUAN 5 -->
+            android:exported="false" /> <!-- PERTEMUAN 5 -->
         <activity
             android:name=".pertemuan_5.FifthActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan_5.WebViewActivity"
-            android:exported="false" />
-
-        <!-- PERTEMUAN 7 -->
+            android:exported="false" /> <!-- PERTEMUAN 7 -->
         <activity
             android:name=".pertemuan_7.SeventhActivity"
-            android:exported="false" />
-
-        <!-- TUGAS P6 - BINA DESA (ada di Home/tugasp6) -->
+            android:exported="false" /> <!-- TUGAS P6 - BINA DESA (ada di Home/tugasp6) -->
         <activity
             android:name=".BinaDesa"
             android:exported="false" />
         <activity
             android:name=".BinaDesaWebView"
             android:exported="false" />
-
     </application>
 
 </manifest>
