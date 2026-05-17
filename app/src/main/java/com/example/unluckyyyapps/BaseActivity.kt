@@ -7,9 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.unluckyyyapps.Message.MessageFragment
 import com.example.unluckyyyapps.More.MoreFragment
 import com.example.unluckyyyapps.Home.HomeFragment
+import com.example.unluckyyyapps.Message.MessageFragment
+import com.example.unluckyyyapps.List.ListFragment
 import com.example.unluckyyyapps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -58,6 +59,13 @@ class BaseActivity : AppCompatActivity() {
                     replaceFragment(MessageFragment())
                     true
                 }
+
+                // 👇 TAMBAHKAN KODE UNTUK MENU LIST DI SINI 👇
+                R.id.list -> { // Pastikan ID ini SAMA dengan android:id di bottom_nav_menu.xml
+                    replaceFragment(ListFragment()) // Pastikan nama class-nya benar (ListFragment)
+                    true
+                }
+                // 👆 👆 👆
 
                 R.id.more -> {
                     replaceFragment(MoreFragment())
