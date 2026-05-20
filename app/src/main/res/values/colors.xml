@@ -4,5 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FF888888</color>
     <color name="itam">#000000</color>
+    <color name="primaryRed">#B71C1C</color>
+    <color name="darkRed">#7F0000</color>
+    <color name="softBackground">#F5F7FA</color>
+    <color name="textDark">#212121</color>
+    <color name="textGray">#757575</color>
+    <color name="softRed">#FFEBEE</color>
+    <color name="backgroundSoft">#F5F7FA</color>
 
 </resources>
