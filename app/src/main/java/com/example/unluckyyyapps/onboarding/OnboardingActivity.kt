@@ -21,17 +21,17 @@ class OnboardingActivity : AppCompatActivity() {
 
         val items = listOf(
             OnboardingItem(
-                "🌴🏡",
+                "🏡",
                 "Selamat Datang di Bina Desa 👋",
                 "Langkah awal untuk mengeksplorasi keindahan desa, mendata pariwisata lokal, dan memajukan perekonomian daerah secara digital dan terintegrasi."
             ),
             OnboardingItem(
-                "🛌🔑",
+                "🛌",
                 "Temukan Homestay Nyaman 🛌",
                 "Nikmati kehangatan dan keramahan pedesaan dengan pilihan penginapan terbaik yang aman, bersih, dan berfasilitas lengkap untuk liburan Anda."
             ),
             OnboardingItem(
-                "🗺️📷",
+                "🗺️",
                 "Dukung Ekonomi Lokal 🗺️",
                 "Tiap kunjungan dan kontribusi Anda sangat berharga. Mari bersama-sama memberdayakan potensi wisata lokal demi masa depan desa yang lebih sejahtera."
             )

@@ -3,17 +3,18 @@ package com.example.unluckyyyapps.Home
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
+import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.unluckyyyapps.BinaDesa
 import com.example.unluckyyyapps.BinaDesaWebView
 import com.example.unluckyyyapps.R
 import com.example.unluckyyyapps.SplashScreenActivity
+import com.example.unluckyyyapps.databinding.FragmentHomeBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -28,9 +29,20 @@ import com.example.unluckyyyapps.pertemuan_4.FourthActivity
 import com.example.unluckyyyapps.pertemuan_5.FifthActivity
 import com.example.unluckyyyapps.pertemuan_7.SeventhActivity
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment() {
 
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     private lateinit var newsAdapter: NewsAdapter
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,16 +50,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // TAMPILKAN NAMA DARI SHAREDPREFERENCES
         val sharedPref = requireContext().getSharedPreferences("user_pref", android.content.Context.MODE_PRIVATE)
         val nama = sharedPref.getString("nama", null) ?: sharedPref.getString("loginUsername", "Rafi")
-        view.findViewById<TextView>(R.id.tvGreeting)?.text = "Halo, $nama! 👋"
+        binding.tvGreeting.text = "Halo, $nama! 👋"
 
         // =========================
         // SETUP NEWS RECYCLERVIEW
         // =========================
 
         newsAdapter = NewsAdapter()
-        val rvNews = view.findViewById<RecyclerView>(R.id.rvNews)
-        rvNews.layoutManager = LinearLayoutManager(requireContext())
-        rvNews.adapter = newsAdapter
+        binding.rvNews.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvNews.adapter = newsAdapter
 
         // Fetch berita dari API publik
         fetchNews()
@@ -56,15 +67,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // PERTEMUAN
         // =========================
 
-        view.findViewById<View>(R.id.btnPertemuan2).setOnClickListener {
+        binding.btnPertemuan2.setOnClickListener {
             startActivity(Intent(requireContext(), SecondActivity::class.java))
         }
 
-        view.findViewById<View>(R.id.btnPertemuan3).setOnClickListener {
+        binding.btnPertemuan3.setOnClickListener {
             startActivity(Intent(requireContext(), ThirdActivity::class.java))
         }
 
-        view.findViewById<View>(R.id.btnPertemuan4).setOnClickListener {
+        binding.btnPertemuan4.setOnClickListener {
             val intent = Intent(requireContext(), FourthActivity::class.java)
             intent.putExtra("name", "Politeknik Caltex Riau")
             intent.putExtra("from", "Rumbai")
@@ -72,11 +83,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             startActivity(intent)
         }
 
-        view.findViewById<View>(R.id.btnPertemuan5).setOnClickListener {
+        binding.btnPertemuan5.setOnClickListener {
             startActivity(Intent(requireContext(), FifthActivity::class.java))
         }
 
-        view.findViewById<View>(R.id.btnPertemuan7).setOnClickListener {
+        binding.btnPertemuan7.setOnClickListener {
             startActivity(Intent(requireContext(), SeventhActivity::class.java))
         }
 
@@ -84,11 +95,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // TUGAS P6 - BINA DESA
         // =========================
 
-        view.findViewById<View>(R.id.btnTugasP6).setOnClickListener {
+        binding.btnTugasP6.setOnClickListener {
             startActivity(Intent(requireContext(), BinaDesa::class.java))
         }
 
-        view.findViewById<View>(R.id.btnWebTugasP6).setOnClickListener {
+        binding.btnWebTugasP6.setOnClickListener {
             startActivity(Intent(requireContext(), BinaDesaWebView::class.java))
         }
 
@@ -96,7 +107,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         // LOGOUT
         // =========================
 
-        view.findViewById<View>(R.id.btnLogout).setOnClickListener {
+        binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle("Konfirmasi")
                 .setMessage("Yakin ingin keluar akun?")
@@ -140,7 +151,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     val articles = jsonObject.getJSONArray("articles")
 
                     val list = mutableListOf<News>()
-                    // Ambil maksimal 5 berita untuk ditampilkan
                     val limit = minOf(articles.length(), 5)
 
                     for (i in 0 until limit) {
@@ -148,19 +158,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                         val source = article.getJSONObject("source")
 
                         val title = article.optString("title", "")
-                        val description = article.optString("description", "")
-                        val urlToImage = article.optString("urlToImage", null)
+                        val description = if (article.isNull("description")) null else article.getString("description")
+                        val urlToImage = if (article.isNull("urlToImage")) null else article.getString("urlToImage")
                         val articleUrl = article.optString("url", "")
                         val publishedAt = article.optString("publishedAt", "")
                         val sourceName = source.optString("name", "Unknown")
 
-                        // Skip berita yang tidak memiliki judul
                         if (title.isNotEmpty() && title != "null") {
                             list.add(
                                 News(
                                     title = title,
-                                    description = if (description == "null") null else description,
-                                    urlToImage = if (urlToImage == "null") null else urlToImage,
+                                    description = description,
+                                    urlToImage = urlToImage,
                                     url = articleUrl,
                                     publishedAt = publishedAt,
                                     sourceName = sourceName
@@ -179,5 +188,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 Log.e("HomeFragment", "Gagal memuat berita: ${e.message}")
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
