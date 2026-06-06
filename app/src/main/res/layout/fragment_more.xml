@@ -2,236 +2,413 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA"
+    android:background="#F5F5F0"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
+        <!-- ═══════════ HERO SECTION ═══════════ -->
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:cardBackgroundColor="#C62828"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="6dp">
+            android:background="@drawable/bg_hero_gradient"
+            android:padding="32dp"
+            android:paddingBottom="36dp">
+
+            <!-- Decorative circle top-right -->
+            <View
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="-40dp"
+                android:background="@drawable/bg_circle_deco_light"/>
+
+            <!-- Decorative circle bottom-left -->
+            <View
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginBottom="-20dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_circle_deco_light"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp">
+                android:orientation="vertical">
 
-                <com.google.android.material.textview.MaterialTextView
+                <!-- Label atas -->
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="✦ PROGRAM BINA DESA"
-                    android:textColor="#FFCDD2"
-                    android:textSize="11sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.15"
-                    android:layout_marginBottom="8dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
 
-                <com.google.android.material.textview.MaterialTextView
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="1dp"
+                        android:background="#FFCDD2"
+                        android:alpha="0.7"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PROGRAM BINA DESA"
+                        android:textColor="#FFCDD2"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.2"/>
+
+                </LinearLayout>
+
+                <!-- Judul Hero -->
+                <TextView
                     android:id="@+id/tv_message_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pariwisata &amp;\nHomestay Desa"
                     android:textColor="@android:color/white"
-                    android:textSize="28sp"
+                    android:textSize="34sp"
                     android:textStyle="bold"
                     android:lineSpacingExtra="4dp"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="10dp"/>
 
-                <com.google.android.material.textview.MaterialTextView
+                <!-- Subtitle Hero -->
+                <TextView
                     android:id="@+id/tv_message_body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bersama Membangun Desa, Menjaga Alam, Menyambut Dunia"
+                    android:text="Bersama Membangun Desa,\nMenjaga Alam, Menyambut Dunia"
                     android:textColor="#FFEBEE"
-                    android:textSize="13sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp"
+                    android:alpha="0.85"/>
 
-        <com.google.android.material.card.MaterialCardView
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- ═══════════ BODY CONTENT ═══════════ -->
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="4dp">
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ─── FEATURE STRIP ─── -->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp">
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
 
+                <!-- Feature 1 -->
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_marginBottom="24dp">
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_feature_card"
+                    android:padding="12dp"
+                    android:layout_marginEnd="6dp">
 
                     <ImageView
-                        android:id="@+id/iv_message_icon"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@drawable/ic_tourism_red"
-                        android:background="@drawable/bg_btn_red"
-                        android:backgroundTint="#FFEBEE"
-                        android:padding="16dp"
-                        android:contentDescription="Message Icon" />
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_nature"
+                        android:background="@drawable/bg_icon_red"
+                        android:padding="6dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alam Terjaga"
+                        android:textColor="#1A1A1A"
+                        android:textSize="10sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wisata ramah lingkungan"
+                        android:textColor="#999999"
+                        android:textSize="9sp"
+                        android:layout_marginTop="2dp"/>
+
                 </LinearLayout>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
+                <!-- Feature 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="TENTANG KAMI"
-                    android:textColor="#C62828"
-                    android:textSize="11sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.15"
-                    android:layout_marginBottom="6dp" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_feature_card"
+                    android:padding="12dp"
+                    android:layout_marginEnd="6dp">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Membangun Pariwisata Lokal Berkelas"
-                    android:textColor="#212121"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_homestay"
+                        android:background="@drawable/bg_icon_red"
+                        android:padding="6dp"
+                        android:layout_marginBottom="8dp"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Homestay Lokal"
+                        android:textColor="#1A1A1A"
+                        android:textSize="10sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="200+ penginapan desa"
+                        android:textColor="#999999"
+                        android:textSize="9sp"
+                        android:layout_marginTop="2dp"/>
+
+                </LinearLayout>
+
+                <!-- Feature 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Program Bina Desa hadir untuk memberdayakan masyarakat melalui pengembangan sektor pariwisata lokal dan pengelolaan homestay. Kami percaya setiap desa memiliki keunikan tersendiri yang layak dikenal dunia."
-                    android:textColor="#616161"
-                    android:textSize="14sp"
-                    android:lineSpacingExtra="4dp"
-                    android:layout_marginBottom="24dp" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_feature_card"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_globe"
+                        android:background="@drawable/bg_icon_red"
+                        android:padding="6dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dikenal Dunia"
+                        android:textColor="#1A1A1A"
+                        android:textSize="10sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5K+ wisatawan"
+                        android:textColor="#999999"
+                        android:textSize="9sp"
+                        android:layout_marginTop="2dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ─── ABOUT CARD ─── -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false"
-                    android:layout_marginBottom="24dp">
+                    android:orientation="vertical"
+                    android:padding="24dp">
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
+                    <!-- Icon Center -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="6dp"
-                        app:cardBackgroundColor="#8E0000"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="0dp">
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="16dp">
 
+                        <ImageView
+                            android:id="@+id/iv_message_icon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_tourism_red"
+                            android:background="@drawable/bg_icon_round_red"
+                            android:padding="16dp"/>
+
+                    </LinearLayout>
+
+                    <!-- Label -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TENTANG KAMI"
+                        android:textColor="#C62828"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.2"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="6dp"/>
+
+                    <!-- Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Membangun Pariwisata\nLokal Berkelas"
+                        android:textColor="#1A1A1A"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- Description -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Program Bina Desa hadir untuk memberdayakan masyarakat melalui pengembangan sektor pariwisata lokal dan pengelolaan homestay. Kami percaya setiap desa memiliki keunikan tersendiri yang layak dikenal dunia."
+                        android:textColor="#666666"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="24dp"/>
+
+                    <!-- STATS ROW -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="24dp">
+
+                        <!-- Stat 1 -->
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="12dp">
-                            <com.google.android.material.textview.MaterialTextView
+                            android:background="@drawable/bg_stat_dark"
+                            android:padding="12dp"
+                            android:layout_marginEnd="6dp">
+
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="50+"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp"
-                                android:textStyle="bold" />
-                            <com.google.android.material.textview.MaterialTextView
+                                android:textStyle="bold"/>
+
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Desa Binaan"
-                                android:textColor="#FFCDD2"
-                                android:textSize="10sp" />
+                                android:textColor="#AAAAAA"
+                                android:textSize="9sp"
+                                android:layout_marginTop="2dp"/>
+
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="6dp"
-                        app:cardBackgroundColor="#C62828"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="0dp">
-
+                        <!-- Stat 2 -->
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
-                            android:padding="12dp">
-                            <com.google.android.material.textview.MaterialTextView
+                            android:background="@drawable/bg_stat_red"
+                            android:padding="12dp"
+                            android:layout_marginEnd="6dp">
+
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="200+"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp"
-                                android:textStyle="bold" />
-                            <com.google.android.material.textview.MaterialTextView
+                                android:textStyle="bold"/>
+
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Homestay"
-                                android:textColor="#FFEBEE"
-                                android:textSize="10sp" />
+                                android:textColor="#FFCDD2"
+                                android:textSize="9sp"
+                                android:layout_marginTop="2dp"/>
+
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="#E53935"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="0dp">
-
+                        <!-- Stat 3 -->
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center"
+                            android:background="@drawable/bg_stat_red_light"
                             android:padding="12dp">
-                            <com.google.android.material.textview.MaterialTextView
+
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="5K+"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp"
-                                android:textStyle="bold" />
-                            <com.google.android.material.textview.MaterialTextView
+                                android:textStyle="bold"/>
+
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Wisatawan"
                                 android:textColor="#FFEBEE"
-                                android:textSize="10sp" />
+                                android:textSize="9sp"
+                                android:layout_marginTop="2dp"/>
+
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <!-- DIVIDER -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/bg_divider_gradient"
+                        android:layout_marginBottom="20dp"/>
+
+                    <!-- BUTTON -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_action"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="SAYA MENGERTI  →"
+                        android:background="@drawable/bg_btn_red_gradient"
+                        android:textColor="@android:color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"
+                        android:elevation="8dp"
+                        android:stateListAnimator="@null"/>
+
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_action"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:text="SAYA MENGERTI"
-                    android:background="@drawable/bg_btn_red"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.05"
-                    android:elevation="4dp"
-                    android:stateListAnimator="@null" />
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

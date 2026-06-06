@@ -29,7 +29,44 @@ class HomestayFragment : Fragment(R.layout.fragment_homestay) {
             "Desa Wisata Tanjung",
             "Rp 300.000 / malam",
             "https://picsum.photos/400?2"
+        ),
+        Homestay(
+            "Homestay Kampung Laut",
+            "Kuala Tungkal",
+            "Rp 250.000 / malam",
+            "https://picsum.photos/400?1"
+        ),Homestay(
+            "Homestay Kampung Laut",
+            "Kuala Tungkal",
+            "Rp 250.000 / malam",
+            "https://picsum.photos/400?1"
+        ),Homestay(
+            "Homestay Kampung Laut",
+            "Kuala Tungkal",
+            "Rp 250.000 / malam",
+            "https://picsum.photos/400?1"
+        ),Homestay(
+            "Homestay Kampung Laut",
+            "Kuala Tungkal",
+            "Rp 250.000 / malam",
+            "https://picsum.photos/400?1"
+        ),Homestay(
+            "Homestay Kampung Laut",
+            "Kuala Tungkal",
+            "Rp 250.000 / malam",
+            "https://picsum.photos/400?1"
+        ),Homestay(
+            "Homestay Kampung Laut",
+            "Kuala Tungkal",
+            "Rp 250.000 / malam",
+            "https://picsum.photos/400?1"
+        ),Homestay(
+            "Homestay Kampung Laut",
+            "Kuala Tungkal",
+            "Rp 250.000 / malam",
+            "https://picsum.photos/400?1"
         )
+
     )
 
     override fun onViewCreated(

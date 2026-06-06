@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import com.example.unluckyyyapps.onboarding.OnboardingActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -26,23 +27,30 @@ class SplashScreenActivity : AppCompatActivity() {
                     MODE_PRIVATE
                 )
 
+            val isFirstTime =
+                sharedPref.getBoolean(
+                    "isFirstTime",
+                    true
+                )
+
             val isLogin =
                 sharedPref.getBoolean(
                     "isLogin",
                     false
                 )
 
-            // JIKA SUDAH LOGIN -> LANGSUNG KE BINA DESA
             val intent =
-                if (isLogin) {
-
+                if (isFirstTime) {
+                    Intent(
+                        this@SplashScreenActivity,
+                        OnboardingActivity::class.java
+                    )
+                } else if (isLogin) {
                     Intent(
                         this@SplashScreenActivity,
                         BinaDesa::class.java
                     )
-
                 } else {
-
                     Intent(
                         this@SplashScreenActivity,
                         AuthActivity::class.java

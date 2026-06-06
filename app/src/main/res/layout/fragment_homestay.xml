@@ -9,31 +9,6 @@
 
     <!-- HEADER -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/bg_header_red"
-        android:padding="24dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Homestay Desa"
-            android:textColor="@android:color/white"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temukan penginapan terbaik desa wisata"
-            android:textColor="#FFCDD2"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"/>
-
-    </LinearLayout>
-
     <!-- RECYCLERVIEW -->
 
     <androidx.recyclerview.widget.RecyclerView
