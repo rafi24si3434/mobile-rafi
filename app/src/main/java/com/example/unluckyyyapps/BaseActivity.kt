@@ -11,6 +11,7 @@ import com.example.unluckyyyapps.More.MoreFragment
 import com.example.unluckyyyapps.Home.HomeFragment
 import com.example.unluckyyyapps.Message.MessageFragment
 import com.example.unluckyyyapps.List.ListFragment
+import com.example.unluckyyyapps.surat.PengajuanFragment
 import com.example.unluckyyyapps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -55,20 +56,25 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.message -> {
-                    replaceFragment(MessageFragment())
+                R.id.list -> {
+                    replaceFragment(ListFragment())
                     true
                 }
 
-                // 👇 TAMBAHKAN KODE UNTUK MENU LIST DI SINI 👇
-                R.id.list -> { // Pastikan ID ini SAMA dengan android:id di bottom_nav_menu.xml
-                    replaceFragment(ListFragment()) // Pastikan nama class-nya benar (ListFragment)
+                R.id.pengajuan -> {
+                    replaceFragment(PengajuanFragment())
                     true
                 }
-                // 👆 👆 👆
+
+                R.id.message -> {
+                    // "About" menu loads MoreFragment (About Bina Desa)
+                    replaceFragment(MoreFragment())
+                    true
+                }
 
                 R.id.more -> {
-                    replaceFragment(MoreFragment())
+                    // "Profile" menu loads MessageFragment (Profile Kontributor)
+                    replaceFragment(MessageFragment())
                     true
                 }
 

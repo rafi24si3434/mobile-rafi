@@ -31,7 +31,7 @@ class OnboardingActivity : AppCompatActivity() {
                 "Nikmati kehangatan dan keramahan pedesaan dengan pilihan penginapan terbaik yang aman, bersih, dan berfasilitas lengkap untuk liburan Anda."
             ),
             OnboardingItem(
-                "🗺️",
+                "🗺️         ",
                 "Dukung Ekonomi Lokal 🗺️",
                 "Tiap kunjungan dan kontribusi Anda sangat berharga. Mari bersama-sama memberdayakan potensi wisata lokal demi masa depan desa yang lebih sejahtera."
             )

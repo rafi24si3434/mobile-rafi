@@ -65,6 +65,12 @@
         <activity
             android:name=".BinaDesaWebView"
             android:exported="false" />
+        <activity
+            android:name=".surat.FormHomestayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".List.FormPariwisataActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

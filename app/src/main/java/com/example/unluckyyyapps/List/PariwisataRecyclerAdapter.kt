@@ -1,57 +1,64 @@
-    package com.example.unluckyyyapps.List
+package com.example.unluckyyyapps.List
 
-    import android.view.LayoutInflater
-    import android.view.ViewGroup
-    import androidx.recyclerview.widget.RecyclerView
-    import com.bumptech.glide.Glide
-    import com.example.unluckyyyapps.databinding.ItemPariwisataBinding
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.unluckyyyapps.databinding.ItemPariwisataBinding
 
-    class PariwisataRecyclerAdapter(
-        private val wisataList: List<Pariwisata>,
-        private val onClick: (Pariwisata) -> Unit
-    ) : RecyclerView.Adapter<PariwisataRecyclerAdapter.ViewHolder>() {
+class PariwisataRecyclerAdapter(
+    private val onClick: (Pariwisata) -> Unit,
+    private val onLongClick: (Pariwisata) -> Unit
+) : RecyclerView.Adapter<PariwisataRecyclerAdapter.ViewHolder>() {
 
-        inner class ViewHolder(
-            val binding: ItemPariwisataBinding
-        ) : RecyclerView.ViewHolder(binding.root)
+    private val wisataList = mutableListOf<Pariwisata>()
 
-        override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-        ): ViewHolder {
+    inner class ViewHolder(
+        val binding: ItemPariwisataBinding
+    ) : RecyclerView.ViewHolder(binding.root)
 
-            val binding = ItemPariwisataBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
+        val binding = ItemPariwisataBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ViewHolder(binding)
+    }
 
-            return ViewHolder(binding)
-        }
+    override fun onBindViewHolder(
+        holder: ViewHolder,
+        position: Int
+    ) {
+        val wisata = wisataList[position]
 
-        override fun onBindViewHolder(
-            holder: ViewHolder,
-            position: Int
-        ) {
+        with(holder.binding) {
+            tvNamaWisata.text = wisata.nama
+            tvDeskripsi.text = wisata.deskripsi
 
-            val wisata = wisataList[position]
+            Glide.with(root.context)
+                .load(wisata.gambarUrl)
+                .into(ivWisata)
 
-            with(holder.binding) {
+            root.setOnClickListener {
+                onClick(wisata)
+            }
 
-                tvNamaWisata.text = wisata.nama
-                tvDeskripsi.text = wisata.deskripsi
-
-                Glide.with(root.context)
-                    .load(wisata.gambarUrl)
-                    .into(ivWisata)
-
-                root.setOnClickListener {
-                    onClick(wisata)
-                }
+            root.setOnLongClickListener {
+                onLongClick(wisata)
+                true
             }
         }
-
-        override fun getItemCount(): Int {
-            return wisataList.size
-        }
     }
+
+    override fun getItemCount(): Int = wisataList.size
+
+    fun submitList(list: List<Pariwisata>) {
+        wisataList.clear()
+        wisataList.addAll(list)
+        notifyDataSetChanged()
+    }
+}

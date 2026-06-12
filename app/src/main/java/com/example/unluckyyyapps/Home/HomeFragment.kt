@@ -28,6 +28,7 @@ import com.example.unluckyyyapps.pertemuan_3.ThirdActivity
 import com.example.unluckyyyapps.pertemuan_4.FourthActivity
 import com.example.unluckyyyapps.pertemuan_5.FifthActivity
 import com.example.unluckyyyapps.pertemuan_7.SeventhActivity
+import com.example.unluckyyyapps.surat.PengajuanFragment
 
 class HomeFragment : Fragment() {
 
@@ -89,6 +90,13 @@ class HomeFragment : Fragment() {
 
         binding.btnPertemuan7.setOnClickListener {
             startActivity(Intent(requireContext(), SeventhActivity::class.java))
+        }
+
+        binding.btnPertemuan12.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, PengajuanFragment())
+                .addToBackStack(null)
+                .commit()
         }
 
         // =========================
